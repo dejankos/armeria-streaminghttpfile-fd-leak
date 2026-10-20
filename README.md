@@ -54,7 +54,7 @@ after 100 responses aborted and completed: 81
 after System.gc():                              0
 ```
 
-Across runs 63 to 81 of the 100 stay open, on macOS and on Linux (`eclipse-temurin:21-jdk`). The rest get closed
+Across runs 63 to 96 of the 100 stay open, on macOS and on Linux (`eclipse-temurin:21-jdk`). The rest get closed
 through `tryWrite() == false`, when the abort lands before the next chunk is written. Expected is 0 once the responses
 have completed, without a GC.
 
